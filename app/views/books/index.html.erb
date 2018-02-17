@@ -1,0 +1,17 @@
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <% cache book do %>
+        <%= render book %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
