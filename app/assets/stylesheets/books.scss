@@ -4,3 +4,17 @@
 table, th, td, .comment {
    border: 1px solid black;
 }
+
+.book-details, .top-rated, .comments {
+  display: inline-block;
+}
+
+.book-details {
+  float: left;
+  max_width: 750px;
+}
+
+.top-rated {
+  float: right;
+}
+

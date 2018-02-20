@@ -1,0 +1,10 @@
+<div class='top-rated'>
+  <h4>Top Rated</h4>
+  <ul>
+    <% cache 'top-rated' do %>
+      <% Book.top_rated(10).each do |book| %>
+        <li><%= link_to "#{book.title} - #{book.avg_rate.round(2)}", book_path(book) %>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
