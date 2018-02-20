@@ -4,4 +4,12 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   Character.create(name: 'Luke', movie: movies
+
+10_000.times do
+  book = FactoryBot.create(:book)
+
+  rand(10..30).times do
+    FactoryBot.create(:comment, book: book)
+  end
+end

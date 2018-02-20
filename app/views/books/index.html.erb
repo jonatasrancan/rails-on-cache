@@ -3,14 +3,14 @@
     <tr>
       <th>Author</th>
       <th>Title</th>
+      <th>Comments</th>
+      <th>Rate</th>
       <th>Link</th>
     </tr>
   </thead>
   <tbody>
     <% @books.each do |book| %>
-      <% cache book do %>
-        <%= render book %>
-      <% end %>
+      <%= render book %>
     <% end %>
   </tbody>
 </table>

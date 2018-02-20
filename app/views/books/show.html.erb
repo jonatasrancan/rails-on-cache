@@ -1,14 +1,11 @@
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<% cache @book do %>
+  <%= render partial: 'book_details', locals: { book: @book } %>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+  <h4>Comments</h4>
+  <% @book.comments.each do |comment| %>
+    <% cache comment do %>
+      <%= render partial: 'comments/comment', locals: { comment: comment } %>
+    <% end %>
+  <% end %>
+<% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>

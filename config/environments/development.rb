@@ -13,7 +13,8 @@ Rails.application.configure do
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
-  config.cache_store = :memory_store
+  # config.cache_store = :memory_store
+  config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 90.minutes }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
