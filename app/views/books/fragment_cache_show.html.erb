@@ -1,0 +1,12 @@
+<% cache @book do %>
+  <%= render partial: 'book_details', locals: { book: @book } %>
+  <% cache 'top-rated' do %>
+    <%= render partial: 'top_rated' %>
+  <% end %>
+
+  <div class='comments'>
+    <h4>Comments</h4>
+    <%= render partial: 'comments/comment', collection: @book.comments, cached: true %>
+  </div>
+<% end %>
+
