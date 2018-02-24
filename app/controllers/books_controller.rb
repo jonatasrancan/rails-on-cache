@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :log_before_action, only: :action_cache_show
+  after_action  :log_after_action, only: :action_cache_show
 
   caches_page :page_cache_show
   caches_action :action_cache_show
@@ -35,6 +36,12 @@ class BooksController < ApplicationController
   def log_before_action
     Rails.logger.info "======================="
     Rails.logger.info "Executing before action"
+    Rails.logger.info "======================="
+  end
+
+  def log_after_action
+    Rails.logger.info "======================="
+    Rails.logger.info "Executing after action"
     Rails.logger.info "======================="
   end
 end
